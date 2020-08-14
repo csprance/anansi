@@ -2,12 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import initialState from './state';
 
 export const slice = createSlice({
-  name: 'app',
+  name: 'characters',
   initialState,
-  reducers: {
-  },
+  reducers: {},
 });
 
-export const {  } = slice.actions;
+export const {} = slice.actions;
 
 export default slice.reducer;

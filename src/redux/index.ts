@@ -16,8 +16,14 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
-import appReducer from './app/slice';
 import { useDispatch } from 'react-redux';
+
+import appReducer from './app/slice';
+import groupsReducer from './groups/slice';
+import placesReducer from './places/slice';
+import charactersReducer from './characters/slice';
+import itemsReducer from './characters/slice';
+import worldsReducer from './worlds/slice';
 
 const persistConfig = {
   key: 'root',
@@ -26,6 +32,11 @@ const persistConfig = {
 
 export const rootReducer = combineReducers({
   app: appReducer,
+  places: placesReducer,
+  groups: groupsReducer,
+  characters: charactersReducer,
+  items: itemsReducer,
+  worlds: worldsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -7,21 +7,21 @@ import { ThemeProvider } from '@material-ui/styles';
 import store, { persistor } from './redux';
 import bootstrap from './redux/bootstrap';
 import { GlobalStyle } from './styles/GlobalStyle';
-import Home from './containers/Home';
+import Layout from './components/Layout';
 import { theme } from './styles/mui-theme';
 
 const mainElement = document.createElement('div');
 mainElement.setAttribute('id', 'root');
 document.body.appendChild(mainElement);
+bootstrap(store);
 
 const App = () => {
-  bootstrap(store);
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <PersistGate loading={null} persistor={persistor}>
           <GlobalStyle />
-          <Home />
+          <Layout />
         </PersistGate>
       </ThemeProvider>
     </Provider>
